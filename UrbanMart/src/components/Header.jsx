@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 function Header() {
@@ -21,6 +22,10 @@ function Header() {
           </li>
           <li>
             <Link to="/checkout">Checkout</Link>
+          </li>
+
+          <li>
+            <Link to="/contact">Checkout</Link>
           </li>
         </ul>
         {/* <Link to="/productDetails">Product Details</Link> */}
