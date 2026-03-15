@@ -1,5 +1,5 @@
 import ProductDetails from "./ProductDetails";
-import bgimg from "../assets/bg-e-comm.png";
+import bgimg from "../assets/bg-img.png";
 
 function Home() {
   return (
