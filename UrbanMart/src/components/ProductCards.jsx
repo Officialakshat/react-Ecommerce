@@ -1,16 +1,7 @@
-import { Link } from "react-router-dom";
+import React from "react";
 
-function ProductCard({ product }) {
-  return (
-    <div>
-      <img src={product.image} width="200" />
-
-      <h3>{product.name}</h3>
-      <p>₹{product.price}</p>
-
-      <Link to={`/product/${product.id}`}>View Product</Link>
-    </div>
-  );
+function ProductCards() {
+  return <div>ProductCards</div>;
 }
 
-export default ProductCard;
+export default ProductCards;

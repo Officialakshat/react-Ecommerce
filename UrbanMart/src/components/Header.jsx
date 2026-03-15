@@ -1,36 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <nav className="min-h-20 bg-gray-100  text-green-400 flex flex-col md:flex-row justify-between items-center px-6 gap-5 ">
-      <div className="flex items-center gap-4 ">
-        <img
-          className="h-12 w-12 "
-          src="https://cdn-icons-png.flaticon.com/512/2662/2662459.png"
-          alt=""
-        />
-        <p className="text-2xl md:text-3xl font-semibold">UrbanMart</p>
-      </div>
-      <div className="space-x-6  font-semibold  justify-center items-center">
-        <ul className="gap-4 flex flex-col md:flex-row">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/cart">Cart</Link>
-          </li>
-          <li>
-            <Link to="/checkout">Checkout</Link>
-          </li>
+    <>
+      <nav className="flex flex-col bg-slate-50 md:flex-row  justify-between px-4 py-4 md:px-10 space-y-3 items-start ">
+        <div className="text-3xl font-semibold text-gray-600 ">
+          <h1>UrbanMart</h1>
+        </div>
 
-          <li>
-            <Link to="/contact">Checkout</Link>
-          </li>
-        </ul>
-        {/* <Link to="/productDetails">Product Details</Link> */}
-      </div>
-    </nav>
+        <div className="w-full md:w-auto ">
+          <ul className="flex items-start md:space-x-5 text-slate-500  space-y-3 flex-col md:flex-row text-nowrap">
+            <li className="border-b md:border-0 w-full">Home</li>
+            <li className="border-b md:border-0 w-full">Services</li>
+            <li className="border-b md:border-0 w-full">Products</li>
+            <li className="border-b md:border-0 w-full">Best Deals</li>
+            <li className="border-b md:border-0 w-full">Gallary</li>
+          </ul>
+        </div>
+      </nav>
+    </>
   );
 }
 
