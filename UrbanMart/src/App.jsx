@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import { Categories } from "./pages/Category";
 import { NewArrivals } from "./pages/NewArrivals";
 import { BestDeals } from "./pages/BestDeals";
+import { Brands } from "./pages/Brands";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
           <Route path="newArrivals" element={<NewArrivals />} />
           <Route path="bestDeals" element={<BestDeals />} />
           <Route path="cart" element={<Cart />} />
-
+          <Route path="brands" element={<Brands />} />
           {/* <Route path="product/:id" element={<ProductDetails />} /> */}
 
           <Route path="checkout" element={<Checkout />} />

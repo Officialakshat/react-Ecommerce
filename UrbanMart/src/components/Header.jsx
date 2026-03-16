@@ -7,7 +7,6 @@ const navLinks = [
   { name: "NewArrivals", path: "/newArrivals" },
   { name: "Deals", path: "/bestDeals" },
   { name: "Brands", path: "/brands" },
-  { name: "About", path: "/about" },
 ];
 
 export default function Navbar() {
