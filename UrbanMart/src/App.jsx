@@ -6,6 +6,8 @@ import Checkout from "./pages/Checkout";
 import Layout from "./layout/layout";
 import Contact from "./pages/Contact";
 import { Categories } from "./pages/Category";
+import { NewArrivals } from "./pages/NewArrivals";
+import { BestDeals } from "./pages/BestDeals";
 
 function App() {
   return (
@@ -15,7 +17,8 @@ function App() {
           <Route index element={<Home />} />
 
           <Route path="category" element={<Categories />} />
-
+          <Route path="newArrivals" element={<NewArrivals />} />
+          <Route path="bestDeals" element={<BestDeals />} />
           <Route path="cart" element={<Cart />} />
 
           {/* <Route path="product/:id" element={<ProductDetails />} /> */}
