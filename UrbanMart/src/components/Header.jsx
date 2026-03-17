@@ -52,9 +52,9 @@ export default function Navbar() {
 
         {/* Desktop Actions */}
         <div className="hidden lg:flex items-center gap-2.5 shrink-0">
-          <button className="border-[1.5px] border-[#C9B194] text-[#C9B194] hover:bg-[#C9B19415] text-[13px] font-medium rounded-full px-5 py-2 transition-all duration-200 hover:-translate-y-px">
-            Log in
-          </button>
+          <a className="border-[1.5px] border-[#C9B194] text-[#C9B194] hover:bg-[#C9B19415] text-[13px] font-medium rounded-full px-5 py-2 transition-all duration-200 hover:-translate-y-px">
+            <Link></Link>
+          </a>
           <button className="bg-[#C9B194] hover:bg-[#b89e7e] text-white text-[13px] font-medium rounded-full px-5 py-2 transition-all duration-200 hover:-translate-y-px">
             Sign up
           </button>
