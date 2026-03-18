@@ -1,10 +1,10 @@
-export function LoginPage({ onSwitch }) {
+export default function LoginPage({ onSwitch }) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#fdf9f5] via-[#f5ede0] to-[#ede0cc] flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-linear-to-br from-[#fdf9f5] via-[#f5ede0] to-[#ede0cc] flex items-center justify-center px-4 py-12">
       {/* Card */}
       <div className="w-full max-w-md bg-white rounded-3xl shadow-xl shadow-[#C9B19420] border border-[#ede5da] overflow-hidden">
         {/* Top accent bar */}
-        <div className="h-1 bg-gradient-to-r from-[#C9B194] via-[#e8d5bb] to-[#C9B194]" />
+        <div className="h-1 bg-linear-to-r from-[#C9B194] via-[#e8d5bb] to-[#C9B194]" />
 
         <div className="px-8 py-9">
           {/* Logo */}

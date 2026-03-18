@@ -41,7 +41,7 @@ const newArrivals = [
   },
 ];
 
-export function NewArrivals() {
+export default function NewArrivals() {
   return (
     <section className="bg-white py-12 px-5 sm:px-8 lg:px-12">
       {/* Header */}
@@ -128,5 +128,3 @@ export function NewArrivals() {
     </section>
   );
 }
-
-export default NewArrivals;

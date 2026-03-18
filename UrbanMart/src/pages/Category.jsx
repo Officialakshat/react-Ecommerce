@@ -51,7 +51,7 @@ const products = [
 // ══════════════════════════════════════
 // CATEGORIES COMPONENT
 // ══════════════════════════════════════
-export function Categories() {
+export default function Categories() {
   return (
     <section className="bg-white py-12 px-5 sm:px-8 lg:px-12">
       {/* Heading */}

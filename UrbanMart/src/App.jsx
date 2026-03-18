@@ -5,10 +5,11 @@ import ProductDetails from "./pages/ProductDetails";
 import Checkout from "./pages/Checkout";
 import Layout from "./layout/layout";
 import Contact from "./pages/Contact";
-import { Categories } from "./pages/Category";
-import { NewArrivals } from "./pages/NewArrivals";
+import Categories from "./pages/Category";
+import NewArrivals from "./pages/NewArrivals";
 import { BestDeals } from "./pages/BestDeals";
 import { Brands } from "./pages/Brands";
+import LoginPage from "./pages/Login";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
           <Route path="cart" element={<Cart />} />
           <Route path="brands" element={<Brands />} />
           {/* <Route path="product/:id" element={<ProductDetails />} /> */}
-
+          <Route path="login" element={<LoginPage />} />
           <Route path="checkout" element={<Checkout />} />
 
           <Route path="contact" element={<Contact />} />
