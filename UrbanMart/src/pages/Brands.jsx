@@ -6,7 +6,7 @@ const brands = [
   { name: "Nike", bg: "#111", text: "#fff" },
   { name: "Zara", bg: "#fff", text: "#111" },
 ];
-export function Brands() {
+export default function Brands() {
   return (
     <section className="bg-[#fdf9f5] py-12 px-5 sm:px-8 lg:px-12 border-y border-[#ede5da]">
       <div className="max-w-5xl mx-auto">

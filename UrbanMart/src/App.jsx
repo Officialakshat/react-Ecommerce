@@ -7,8 +7,8 @@ import Layout from "./layout/layout";
 import Contact from "./pages/Contact";
 import Categories from "./pages/Category";
 import NewArrivals from "./pages/NewArrivals";
-import { BestDeals } from "./pages/BestDeals";
-import { Brands } from "./pages/Brands";
+import BestDeals from "./pages/BestDeals";
+import Brands from "./pages/Brands";
 import LoginPage from "./pages/Login";
 
 function App() {

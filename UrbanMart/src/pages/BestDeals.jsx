@@ -28,7 +28,7 @@ const bestDeals = [
     endsIn: "01:08:55",
   },
 ];
-export function BestDeals() {
+export default function BestDeals() {
   return (
     <section className="bg-[#1a1a1a] py-12 px-5 sm:px-8 lg:px-12">
       {/* Header */}
