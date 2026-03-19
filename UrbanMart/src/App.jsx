@@ -10,6 +10,8 @@ import NewArrivals from "./pages/NewArrivals";
 import BestDeals from "./pages/BestDeals";
 import Brands from "./pages/Brands";
 import LoginPage from "./pages/Login";
+import AddToCart from "./pages/Cart";
+import ProductCard from "./components/ProductCards";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
 
           <Route path="category" element={<Categories />} />
           <Route path="newArrivals" element={<NewArrivals />} />
+          <Route path="addCart" element={<AddToCart />} />
+          <Route path="products" element={<ProductCard />} />
           <Route path="bestDeals" element={<BestDeals />} />
           <Route path="cart" element={<Cart />} />
           <Route path="brands" element={<Brands />} />

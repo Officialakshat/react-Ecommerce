@@ -7,6 +7,7 @@ const navLinks = [
   { name: "NewArrivals", path: "/newArrivals" },
   { name: "Deals", path: "/bestDeals" },
   { name: "Brands", path: "/brands" },
+  { name: "products", path: "/products" },
 ];
 
 export default function Navbar() {
@@ -52,10 +53,7 @@ export default function Navbar() {
 
         {/* Desktop Actions */}
         <div className="hidden lg:flex items-center gap-2.5 shrink-0">
-          <Link
-            to={Link}
-            className="border-[1.5px] border-[#C9B194] text-[#C9B194] hover:bg-[#C9B19415] text-[13px] font-medium rounded-full px-5 py-2 transition-all duration-200 hover:-translate-y-px"
-          >
+          <Link className="border-[1.5px] border-[#C9B194] text-[#C9B194] hover:bg-[#C9B19415] text-[13px] font-medium rounded-full px-5 py-2 transition-all duration-200 hover:-translate-y-px">
             Log In
           </Link>
           <button className="bg-[#C9B194] hover:bg-[#b89e7e] text-white text-[13px] font-medium rounded-full px-5 py-2 transition-all duration-200 hover:-translate-y-px">

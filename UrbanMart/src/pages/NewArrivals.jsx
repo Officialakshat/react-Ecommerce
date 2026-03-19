@@ -1,3 +1,5 @@
+// import { use, useState } from "react";
+
 const newArrivals = [
   {
     id: 1,
@@ -37,6 +39,22 @@ const newArrivals = [
     category: "Office",
     price: 1299,
     img: "https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=400&q=80",
+    isNew: false,
+  },
+  {
+    id: 6,
+    name: "Phone Stand",
+    category: "Mobile accessories",
+    price: 349,
+    img: "https://m.media-amazon.com/images/I/51Gh0Nla3RL._AC_.jpg",
+    isNew: true,
+  },
+  {
+    id: 7,
+    name: "Candle Set",
+    category: "Decor",
+    price: 349,
+    img: "https://houseofaroma.in/wp-content/uploads/2023/10/simple-Pleasures-gift-sets-1.webp",
     isNew: true,
   },
 ];
@@ -81,9 +99,9 @@ export default function NewArrivals() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <span className="absolute top-2 left-2 bg-[#1a1a1a] text-white text-[9px] font-semibold px-2 py-0.5 rounded-full tracking-wide">
-                  NEW
+                  New
                 </span>
-                <button className="absolute top-2 right-2 w-7 h-7 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                <button className="absolute top-2 right-2 w-7 h-7 bg-white/80 hover:bg-white cursor-pointer rounded-full flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
                   <svg
                     width="12"
                     height="12"

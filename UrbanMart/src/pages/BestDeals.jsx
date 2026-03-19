@@ -24,7 +24,7 @@ const bestDeals = [
     price: 449,
     original: 899,
     discount: 50,
-    img: "https://images.unsplash.com/photo-1602607144573-ebb29eda0c4d?w=400&q=80",
+    img: "https://houseofaroma.in/wp-content/uploads/2023/10/simple-Pleasures-gift-sets-1.webp",
     endsIn: "01:08:55",
   },
 ];
