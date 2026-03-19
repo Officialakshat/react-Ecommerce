@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -13,6 +13,7 @@ const navLinks = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#ede5da]">
@@ -53,18 +54,18 @@ export default function Navbar() {
 
         {/* Desktop Actions */}
         <div className="hidden lg:flex items-center gap-2.5 shrink-0">
-          <Link
-            to="login"
+          <button
+            onClick={() => navigate("/login")}
             className="border-[1.5px] border-[#C9B194] text-[#C9B194] hover:bg-[#C9B19415] text-[13px] font-medium rounded-full px-5 py-2 transition-all duration-200 hover:-translate-y-px"
           >
             Log In
-          </Link>
-          <Link
-            to="signup"
+          </button>
+          <button
+            onClick={() => navigate("/signup")}
             className="bg-[#C9B194] hover:bg-[#b89e7e] text-white text-[13px] font-medium rounded-full px-5 py-2 transition-all duration-200 hover:-translate-y-px"
           >
             Sign up
-          </Link>
+          </button>
 
           {/* Wishlist */}
           <button className="relative w-9 h-9 flex items-center justify-center bg-[#f8f5f1] hover:bg-[#efe8de] rounded-full transition-all duration-200 hover:scale-105">
