@@ -56,13 +56,13 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-2.5 shrink-0">
           <button
             onClick={() => navigate("/login")}
-            className="border-[1.5px] border-[#C9B194] text-[#C9B194] hover:bg-[#C9B19415] text-[13px] font-medium rounded-full px-5 py-2 transition-all duration-200 hover:-translate-y-px"
+            className="border-[1.5px] cursor-pointer border-[#C9B194] text-[#C9B194] hover:bg-[#C9B19415] text-[13px] font-medium rounded-full px-5 py-2 transition-all duration-200 hover:-translate-y-px"
           >
             Log In
           </button>
           <button
             onClick={() => navigate("/signup")}
-            className="bg-[#C9B194] hover:bg-[#b89e7e] text-white text-[13px] font-medium rounded-full px-5 py-2 transition-all duration-200 hover:-translate-y-px"
+            className="bg-[#C9B194] cursor-pointer hover:bg-[#b89e7e] text-white text-[13px] font-medium rounded-full px-5 py-2 transition-all duration-200 hover:-translate-y-px"
           >
             Sign up
           </button>
@@ -223,10 +223,16 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="flex gap-2.5 mt-3 pt-3 border-t border-[#ede5da]">
-            <button className="flex-1 border-[1.5px] border-[#C9B194] text-[#C9B194] rounded-full py-2 text-sm font-medium">
+            <button
+              onClick={() => navigate("/login")}
+              className="flex-1 cursor-pointer border-[1.5px] border-[#C9B194] text-[#C9B194] rounded-full py-2 text-sm font-medium"
+            >
               Log in
             </button>
-            <button className="flex-1 bg-[#C9B194] text-white rounded-full py-2 text-sm font-medium">
+            <button
+              onClick={() => navigate("/signup")}
+              className="flex-1 cursor-pointer bg-[#C9B194] text-white rounded-full py-2 text-sm font-medium"
+            >
               Sign up
             </button>
           </div>
