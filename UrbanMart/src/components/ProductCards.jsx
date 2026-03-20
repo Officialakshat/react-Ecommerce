@@ -1,120 +1,32 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-// ─── AddToCart ─────────────────────────────────────────────────────────────
-export function AddToCart({ product, onAdd }) {
-  const [state, setState] = useState("idle"); // idle | adding | added
-  const [qty, setQty] = useState(1);
+const DEMO_PRODUCT = [
+  {
+    id: 1,
+    name: "Luxe Amber Collection",
+    category: "Decor",
+    price: 12499,
+    originalPrice: 20749,
+    rating: 4.9,
+    reviews: 218,
+    badge: "40% OFF",
+    img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80",
+    isNew: true,
+  },
 
-  const handleAdd = () => {
-    if (state !== "idle") return;
-    setState("adding");
-    setTimeout(() => {
-      setState("added");
-      if (onAdd) onAdd({ ...product, quantity: qty });
-      setTimeout(() => setState("idle"), 2000);
-    }, 700);
-  };
-
-  const btnClass = {
-    idle: "bg-yellow-500 text-blue-950 hover:bg-yellow-400 hover:-translate-y-px",
-    adding: "bg-yellow-500/20 text-yellow-500 cursor-not-allowed",
-    added: "bg-green-900 text-green-400 cursor-default",
-  }[state];
-
-  return (
-    <div className="flex items-center gap-3">
-      {/* Qty Stepper */}
-      <div className="flex items-center h-11 border border-yellow-600/30 rounded bg-yellow-600/5">
-        <button
-          onClick={() => setQty((q) => Math.max(1, q - 1))}
-          className="w-9 h-full text-yellow-500 text-lg hover:bg-yellow-600/10 transition-colors"
-        >
-          −
-        </button>
-        <span className="w-8 text-center text-sm font-bold text-stone-100 border-x border-yellow-600/20">
-          {qty}
-        </span>
-        <button
-          onClick={() => setQty((q) => q + 1)}
-          className="w-9 h-full text-yellow-500 text-lg hover:bg-yellow-600/10 transition-colors"
-        >
-          +
-        </button>
-      </div>
-
-      {/* Button */}
-      <button
-        onClick={handleAdd}
-        disabled={state !== "idle"}
-        className={`flex-1 h-11 flex items-center justify-center gap-2 rounded text-xs font-bold tracking-widest uppercase transition-all duration-300 ${btnClass}`}
-      >
-        {state === "idle" && (
-          <>
-            <CartIcon /> Add to Cart
-          </>
-        )}
-        {state === "adding" && <Spinner />}
-        {state === "added" && (
-          <>
-            <CheckIcon /> Added!
-          </>
-        )}
-      </button>
-    </div>
-  );
-}
-
-// ─── AddToWishlist ─────────────────────────────────────────────────────────
-export function AddToWishlist({ product, onToggle }) {
-  const [wished, setWished] = useState(false);
-
-  const handleToggle = () => {
-    const next = !wished;
-    setWished(next);
-    if (onToggle) onToggle({ ...product, wishlisted: next });
-  };
-
-  return (
-    <button
-      onClick={handleToggle}
-      aria-label={wished ? "Remove from wishlist" : "Add to wishlist"}
-      className={`group w-11 h-11 flex items-center justify-center rounded border transition-all duration-200
-        ${
-          wished
-            ? "border-red-800 bg-red-900/20"
-            : "border-yellow-600/30 bg-yellow-600/5 hover:border-red-700/50 hover:bg-red-900/10"
-        }`}
-    >
-      <svg
-        width="17"
-        height="17"
-        viewBox="0 0 24 24"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className={`transition-all duration-300 ${
-          wished
-            ? "fill-red-800 stroke-red-800 scale-110"
-            : "fill-none stroke-stone-500 group-hover:stroke-red-600"
-        }`}
-      >
-        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
-      </svg>
-    </button>
-  );
-}
-
-// ─── ProductCard Demo ──────────────────────────────────────────────────────
-const DEMO_PRODUCT = {
-  id: 1,
-  name: "Luxe Amber Collection",
-  price: 149,
-  originalPrice: 249,
-  rating: 4.9,
-  reviews: 218,
-  badge: "40% OFF",
-};
-
+  {
+    id: 2,
+    name: "Luxe Amber Collection",
+    category: "Decor",
+    price: 12499,
+    originalPrice: 20749,
+    rating: 4.9,
+    reviews: 218,
+    badge: "40% OFF",
+    img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80",
+    isNew: true,
+  },
+];
 export default function ProductCard() {
   const [toast, setToast] = useState(null);
 
@@ -124,68 +36,94 @@ export default function ProductCard() {
   };
 
   return (
-    <div className="min-h-screen bg-[#1a1a2e] flex flex-col items-center justify-center p-10 gap-6">
-      <p className="text-[10px] tracking-[3px] uppercase text-yellow-600/50 font-semibold">
-        UrbanMart — Product Card
-      </p>
+    <div className="min-h-screen bg-white flex flex-col items-center justify-center p-10 gap-6">
+      {/* Page label — matches NewArrivals "Just In" style */}
+      <div className="text-center">
+        <p className="text-xs font-medium tracking-widest text-[#C9B194] uppercase mb-1">
+          Featured
+        </p>
+        <h2
+          className="text-2xl sm:text-3xl font-bold text-gray-900"
+          style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
+        >
+          Product Detail
+        </h2>
+      </div>
 
-      <div className="w-full max-w-sm bg-[#16213e] border border-yellow-600/20 rounded-xl overflow-hidden shadow-2xl">
+      {/* Card — mirrors NewArrivals card styling */}
+      <div className="w-full max-w-xs bg-[#fdf9f5] rounded-2xl overflow-hidden border border-[#ede5da] hover:shadow-md hover:-translate-y-1 transition-all duration-300">
         {/* Image */}
-        <div className="relative bg-[#0f3460] h-52 flex items-center justify-center">
-          <ProductIllustration />
-          <span className="absolute top-3 left-3 bg-red-900 text-yellow-400 text-[11px] font-bold tracking-wide px-3 py-1 rounded-full">
+        <div className="relative h-56 overflow-hidden bg-[#f5ede0]">
+          <img
+            src={DEMO_PRODUCT.img}
+            alt={DEMO_PRODUCT.name}
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+          />
+          {/* New badge — same as NewArrivals */}
+          <span className="absolute top-2 left-2 bg-[#1a1a1a] text-white text-[9px] font-semibold px-2 py-0.5 rounded-full tracking-wide">
+            New
+          </span>
+          {/* Discount badge */}
+          <span className="absolute top-2 left-12 bg-[#C9B194] text-white text-[9px] font-semibold px-2 py-0.5 rounded-full tracking-wide">
             {DEMO_PRODUCT.badge}
           </span>
-          <div className="absolute top-3 right-3">
-            <AddToWishlist product={DEMO_PRODUCT} />
+          {/* Wishlist — same style as NewArrivals hover heart */}
+          <div className="absolute top-2 right-2">
+            {/* <AddToWishlist product={DEMO_PRODUCT} /> */}
           </div>
         </div>
 
         {/* Body */}
-        <div className="p-5">
-          <p className="text-[10px] font-bold tracking-[2px] uppercase text-yellow-500 mb-2">
-            Luxury Collection
+        <div className="p-4">
+          {/* Category */}
+          <p className="text-[10px] text-[#C9B194] font-medium uppercase tracking-wider mb-0.5">
+            {DEMO_PRODUCT.category}
           </p>
 
-          <h2 className="font-serif text-xl font-bold text-stone-100 mb-3 leading-snug">
+          {/* Name */}
+          <p className="text-[15px] font-semibold text-gray-800 mb-2 leading-snug">
             {DEMO_PRODUCT.name}
-          </h2>
+          </p>
 
           {/* Rating */}
-          <div className="flex items-center gap-2 mb-4">
+          <div className="flex items-center gap-1.5 mb-3">
             <div className="flex gap-0.5">
               {[1, 2, 3, 4].map((s) => (
-                <span key={s} className="text-yellow-500 text-sm">
+                <span key={s} className="text-[#C9B194] text-xs">
                   ★
                 </span>
               ))}
-              <span className="text-yellow-500/40 text-sm">★</span>
+              <span className="text-[#C9B194]/30 text-xs">★</span>
             </div>
-            <span className="text-xs text-stone-500">
-              {DEMO_PRODUCT.rating} ({DEMO_PRODUCT.reviews} reviews)
+            <span className="text-[10px] text-gray-400">
+              {DEMO_PRODUCT.rating} ({DEMO_PRODUCT.reviews})
             </span>
           </div>
 
-          {/* Price */}
-          <div className="flex items-baseline gap-3 mb-5">
-            <span className="font-serif text-2xl font-bold text-stone-100">
-              ${DEMO_PRODUCT.price}
+          {/* Price row */}
+          <div className="flex items-baseline gap-2 mb-4">
+            <span className="text-[16px] font-bold text-gray-900">
+              ₹{DEMO_PRODUCT.price.toLocaleString()}
             </span>
-            <span className="text-sm text-stone-600 line-through">
-              ${DEMO_PRODUCT.originalPrice}
+            <span className="text-[12px] text-gray-400 line-through">
+              ₹{DEMO_PRODUCT.originalPrice.toLocaleString()}
             </span>
-            <span className="text-xs font-bold text-green-400">Save $100</span>
+            <span className="text-[10px] font-semibold text-[#a8c5a0]">
+              Save ₹{DEMO_PRODUCT.originalPrice - DEMO_PRODUCT.price}
+            </span>
           </div>
 
-          <div className="h-px bg-white/5 mb-5" />
+          {/* Divider */}
+          <div className="h-px bg-[#ede5da] mb-4" />
 
-          <AddToCart product={DEMO_PRODUCT} onAdd={handleAdd} />
+          {/* Add to cart */}
+          {/* <AddToCart product={DEMO_PRODUCT} onAdd={handleAdd} /> */}
         </div>
       </div>
 
       {/* Toast */}
       {toast && (
-        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-green-900 border border-green-400/30 text-green-400 text-sm font-semibold px-5 py-3 rounded-lg shadow-xl whitespace-nowrap">
+        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-[#fdf9f5] border border-[#C9B194]/40 text-[#9a7f5e] text-sm font-semibold px-5 py-3 rounded-xl shadow-lg whitespace-nowrap">
           <CheckIcon /> {toast}
         </div>
       )}
@@ -197,8 +135,8 @@ export default function ProductCard() {
 function CartIcon() {
   return (
     <svg
-      width="15"
-      height="15"
+      width="14"
+      height="14"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -216,8 +154,8 @@ function CartIcon() {
 function CheckIcon() {
   return (
     <svg
-      width="14"
-      height="14"
+      width="13"
+      height="13"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -238,67 +176,13 @@ function Spinner() {
       viewBox="0 0 24 24"
       fill="none"
     >
-      <circle
-        cx="12"
-        cy="12"
-        r="10"
-        stroke="currentColor"
-        strokeWidth="3"
-        strokeOpacity="0.2"
-      />
+      <circle cx="12" cy="12" r="10" stroke="#ede5da" strokeWidth="3" />
       <path
         d="M12 2a10 10 0 0110 10"
-        stroke="#D4AF37"
+        stroke="#C9B194"
         strokeWidth="3"
         strokeLinecap="round"
       />
-    </svg>
-  );
-}
-
-function ProductIllustration() {
-  return (
-    <svg viewBox="0 0 240 180" width="200" fill="none">
-      <rect x="80" y="40" width="80" height="100" rx="8" fill="#D4AF37" />
-      <rect x="80" y="40" width="80" height="28" rx="8" fill="#B8960C" />
-      <rect x="80" y="62" width="80" height="6" fill="#B8960C" />
-      <text
-        x="120"
-        y="58"
-        textAnchor="middle"
-        fill="#1a1a2e"
-        fontSize="9"
-        fontWeight="700"
-      >
-        PREMIUM
-      </text>
-      <text x="120" y="88" textAnchor="middle" fill="#1a1a2e" fontSize="7">
-        ✦ COLLECTION ✦
-      </text>
-      <rect
-        x="96"
-        y="98"
-        width="48"
-        height="14"
-        rx="3"
-        fill="rgba(26,26,46,0.3)"
-      />
-      <text
-        x="120"
-        y="109"
-        textAnchor="middle"
-        fill="#D4AF37"
-        fontSize="7"
-        fontWeight="600"
-      >
-        FINEST QUALITY
-      </text>
-      <text x="30" y="40" fill="#D4AF37" fontSize="12" opacity="0.5">
-        ✦
-      </text>
-      <text x="195" y="55" fill="#D4AF37" fontSize="8" opacity="0.4">
-        ✦
-      </text>
     </svg>
   );
 }
