@@ -68,7 +68,10 @@ export default function Navbar() {
           </button>
 
           {/* Wishlist */}
-          <button className="relative w-9 h-9 flex items-center justify-center bg-[#f8f5f1] hover:bg-[#efe8de] rounded-full transition-all duration-200 hover:scale-105">
+          <button
+            onClick={() => navigate("/wishlist")}
+            className="relative w-9 h-9 flex items-center justify-center bg-[#f8f5f1] hover:bg-[#efe8de] rounded-full transition-all duration-200 hover:scale-105"
+          >
             <svg
               width="16"
               height="16"

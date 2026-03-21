@@ -1,4 +1,4 @@
-// import { use, useState } from "react";
+import { useWishlist } from "../hooks/useWishlist";
 
 const newArrivals = [
   {
@@ -60,6 +60,8 @@ const newArrivals = [
 ];
 
 export default function NewArrivals() {
+  const { toggleWishlist, isWishlisted } = useWishlist();
+
   return (
     <section className="bg-white py-12 px-5 sm:px-8 lg:px-12">
       {/* Header */}
@@ -101,12 +103,15 @@ export default function NewArrivals() {
                 <span className="absolute top-2 left-2 bg-[#1a1a1a] text-white text-[9px] font-semibold px-2 py-0.5 rounded-full tracking-wide">
                   New
                 </span>
-                <button className="absolute top-2 right-2 w-7 h-7 bg-white/80 hover:bg-white cursor-pointer rounded-full flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                <button
+                  onClick={() => toggleWishlist(item)}
+                  className="absolute top-2 right-2 w-7 h-7 bg-white/80 hover:bg-white cursor-pointer rounded-full flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                >
                   <svg
                     width="12"
                     height="12"
                     viewBox="0 0 24 24"
-                    fill="none"
+                    fill={isWishlisted(item.id) ? "#C9B194" : "none"}
                     stroke="#C9B194"
                     strokeWidth="2"
                   >
