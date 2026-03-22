@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const KEY = "urbanmart_wishlist";
 
-export function useWishlist() {
+export default function useWishlist() {
   const [wishlist, setWishlist] = useState(() => {
     try {
       const stored = localStorage.getItem(KEY);

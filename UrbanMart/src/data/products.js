@@ -1,15 +1,6 @@
 ﻿// data/products.js
 
-export const categories = [
-  { icon: "🛋️", label: "Furniture" },
-  { icon: "💡", label: "Lighting" },
-  { icon: "🎧", label: "Electronics" },
-  { icon: "👗", label: "Fashion" },
-  { icon: "🌿", label: "Plants" },
-  { icon: "🍳", label: "Kitchen" },
-];
-
-export const products = [
+const Products = [
   {
     id: 1,
     name: "Ceramic Table Lamp",
@@ -60,58 +51,67 @@ export const products = [
   },
 ];
 
-export const newArrivals = [
-  {
-    id: 5,
-    name: "Rattan Accent Chair",
-    category: "Furniture",
-    price: 8499,
-    original: 12999,
-    rating: 4.5,
-    reviews: 34,
-    img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=80",
-  },
-  {
-    id: 6,
-    name: "Jade Succulent Pot",
-    category: "Plants",
-    price: 349,
-    original: 599,
-    rating: 4,
-    reviews: 21,
-    img: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=400&q=80",
-  },
-  {
-    id: 7,
-    name: "Matte Black Kettle",
-    category: "Kitchen",
-    price: 2199,
-    original: 2999,
-    rating: 4.5,
-    reviews: 67,
-    img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80",
-  },
-  {
-    id: 8,
-    name: "Linen Throw Pillow",
-    category: "Decor",
-    price: 699,
-    original: 999,
-    rating: 4,
-    reviews: 45,
-    img: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=80",
-  },
-  {
-    id: 9,
-    name: "Wooden Desk Organiser",
-    category: "Office",
-    price: 1299,
-    original: 1799,
-    rating: 5,
-    reviews: 12,
-    img: "https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=400&q=80",
-  },
+export const categories = [
+  { icon: "🛋️", label: "Furniture" },
+  { icon: "💡", label: "Lighting" },
+  { icon: "🎧", label: "Electronics" },
+  { icon: "👗", label: "Fashion" },
+  { icon: "🌿", label: "Plants" },
+  { icon: "🍳", label: "Kitchen" },
 ];
+
+// export const newArrivals = [
+//   {
+//     id: 5,
+//     name: "Rattan Accent Chair",
+//     category: "Furniture",
+//     price: 8499,
+//     original: 12999,
+//     rating: 4.5,
+//     reviews: 34,
+//     img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=80",
+//   },
+//   {
+//     id: 6,
+//     name: "Jade Succulent Pot",
+//     category: "Plants",
+//     price: 349,
+//     original: 599,
+//     rating: 4,
+//     reviews: 21,
+//     img: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=400&q=80",
+//   },
+//   {
+//     id: 7,
+//     name: "Matte Black Kettle",
+//     category: "Kitchen",
+//     price: 2199,
+//     original: 2999,
+//     rating: 4.5,
+//     reviews: 67,
+//     img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80",
+//   },
+//   {
+//     id: 8,
+//     name: "Linen Throw Pillow",
+//     category: "Decor",
+//     price: 699,
+//     original: 999,
+//     rating: 4,
+//     reviews: 45,
+//     img: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=80",
+//   },
+//   {
+//     id: 9,
+//     name: "Wooden Desk Organiser",
+//     category: "Office",
+//     price: 1299,
+//     original: 1799,
+//     rating: 5,
+//     reviews: 12,
+//     img: "https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=400&q=80",
+//   },
+// ];
 
 export const bestDeals = [
   {

@@ -1,4 +1,3 @@
-// components/ProductCard.jsx
 import { useWishlist } from "../hooks/useWishlist";
 
 export default function ProductCard({ item }) {
