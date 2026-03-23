@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import useWishlist from "../hooks/useWishlist";
+import { CartContext } from "../context/CartContext";
 
 // const Products = [
 //   {
@@ -53,6 +55,7 @@ import useWishlist from "../hooks/useWishlist";
 
 export default function ProductCard({ item }) {
   const { toggleWishlist, isWishlisted } = useWishlist();
+  const { addToCart } = useContext(CartContext);
   const wishlisted = isWishlisted(item.id);
   const discount = item
     ? Math.round(((item - item.price) / item.original) * 100)
@@ -164,6 +167,19 @@ export default function ProductCard({ item }) {
             </span>
           )} */}
         </div>
+      </div>
+
+      <div className="border p-4">
+        <img src={item.image} className="w-40" />
+        <h2>{item.name}</h2>
+        <p>₹{item.price}</p>
+
+        <button
+          onClick={() => addToCart(item)}
+          className="bg-blue-500 text-white px-3 py-1 mt-2"
+        >
+          Add to Cart
+        </button>
       </div>
     </div>
   );

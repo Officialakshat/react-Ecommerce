@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Cart from "./pages/Cart";
+import Cart from "./pages/AddToCart";
 import Checkout from "./pages/Checkout";
 import Layout from "./layout/layout";
 import Contact from "./pages/Contact";
@@ -9,7 +9,7 @@ import NewArrivals from "./pages/NewArrivals";
 import BestDeals from "./pages/BestDeals";
 import Brands from "./pages/Brands";
 import LoginPage from "./pages/Login";
-import AddToCart from "./pages/Cart";
+import AddToCart from "./pages/AddToCart";
 import Signup from "./pages/Signup";
 import Wishlist from "./pages/Wishlist";
 import Products from "./pages/ProductCard";
@@ -25,11 +25,11 @@ function App() {
           <Route index element={<Home />} />
           <Route path="category" element={<Categories />} />
           <Route path="newArrivals" element={<NewArrivals />} />
-          <Route path="addCart" element={<AddToCart />} />
           <Route path="bestDeals" element={<BestDeals />} />
           <Route path="cart" element={<Cart />} />
           <Route path="brands" element={<Brands />} />
           <Route path="login" element={<LoginPage />} />
+          <Route path="Cart" element={<AddToCart />} />
           <Route path="products" element={<FeaturedProducts />} />
           <Route path="wishlist" element={<Wishlist />} />
           <Route path="signup" element={<Signup />} />

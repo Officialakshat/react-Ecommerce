@@ -52,5 +52,6 @@ export default function AddToCart({ product, onAdd }) {
         {state === "added" && <>Added!</>}
       </button>
     </div>
+    // <></>
   );
 }

@@ -4,7 +4,7 @@ import ProductCard from "./ProductCard.jsx";
 
 const Products = [
   {
-    id: 1,
+    id: 8,
     name: "Ceramic Table Lamp",
     category: "Lighting",
     price: 1299,
@@ -16,7 +16,7 @@ const Products = [
     img: "https://www.ikea.com/in/en/images/products/blidvaeder-table-lamp-off-white-ceramic-beige__1059594_pe849715_s5.jpg?f=xl",
   },
   {
-    id: 2,
+    id: 9,
     name: "Sony WH-1000XM5",
     category: "Electronics",
     price: 24990,
@@ -28,7 +28,7 @@ const Products = [
     img: "https://luxebook.in/wp-content/uploads/2022/11/MW75S2_Hero_800x800_61a84578-4026-4bc0-8724-c48ab6b36229_800x800.png",
   },
   {
-    id: 3,
+    id: 10,
     name: "Linen Tote Bag",
     category: "Fashion",
     price: 599,
@@ -40,7 +40,7 @@ const Products = [
     img: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&q=80",
   },
   {
-    id: 4,
+    id: 11,
     name: "Minimal Wall Clock",
     category: "Decor",
     price: 1499,
