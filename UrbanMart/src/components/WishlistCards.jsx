@@ -42,11 +42,11 @@ export default function WishlistCard({ item, onRemove }) {
         </p>
         <div className="flex items-center gap-1.5 mb-2.5">
           <span className="text-[14px] font-bold text-gray-900">
-            ₹{item.price.toLocaleString()}
+            ₹{item.price}
           </span>
           {item.original && (
             <span className="text-[11px] text-gray-400 line-through">
-              ₹{item.original.toLocaleString()}
+              ₹{item.original}
             </span>
           )}
         </div>

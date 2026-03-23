@@ -1,4 +1,4 @@
-import { useWishlist } from "../hooks/useWishlist";
+import useWishlist from "../hooks/useWishlist";
 
 const newArrivals = [
   {

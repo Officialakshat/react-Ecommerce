@@ -1,14 +1,65 @@
-import { useWishlist } from "../hooks/useWishlist";
+import useWishlist from "../hooks/useWishlist";
+
+// const Products = [
+//   {
+//     id: 1,
+//     name: "Ceramic Table Lamp",
+//     category: "Lighting",
+//     price: 1299,
+//     original: 1899,
+//     tag: "Best Seller",
+//     tagColor: "bg-[#C9B194] text-white",
+//     rating: 4.5,
+//     reviews: 128,
+//     img: "https://www.ikea.com/in/en/images/products/blidvaeder-table-lamp-off-white-ceramic-beige__1059594_pe849715_s5.jpg?f=xl",
+//   },
+//   {
+//     id: 2,
+//     name: "Sony WH-1000XM5",
+//     category: "Electronics",
+//     price: 24990,
+//     original: 29990,
+//     tag: "30% OFF",
+//     tagColor: "bg-red-100 text-red-600",
+//     rating: 5,
+//     reviews: 340,
+//     img: "https://luxebook.in/wp-content/uploads/2022/11/MW75S2_Hero_800x800_61a84578-4026-4bc0-8724-c48ab6b36229_800x800.png",
+//   },
+//   {
+//     id: 3,
+//     name: "Linen Tote Bag",
+//     category: "Fashion",
+//     price: 599,
+//     original: 999,
+//     tag: "New",
+//     tagColor: "bg-green-100 text-green-700",
+//     rating: 4,
+//     reviews: 56,
+//     img: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&q=80",
+//   },
+//   {
+//     id: 4,
+//     name: "Minimal Wall Clock",
+//     category: "Decor",
+//     price: 1499,
+//     original: 1999,
+//     tag: "Trending",
+//     tagColor: "bg-blue-100 text-blue-600",
+//     rating: 4,
+//     reviews: 89,
+//     img: "https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=400&q=80",
+//   },
+// ];
 
 export default function ProductCard({ item }) {
   const { toggleWishlist, isWishlisted } = useWishlist();
-  const wishlisted = isWishlisted(item);
+  const wishlisted = isWishlisted(item.id);
   const discount = item
     ? Math.round(((item - item.price) / item.original) * 100)
     : null;
 
   return (
-    <div className="group relative bg-white rounded-2xl overflow-hidden border border-[#ede5da] hover:border-[#C9B19460] hover:shadow-[0_8px_30px_#C9B19420] hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+    <div className="group relative bg-white rounded-2xl overflow-hidden border border-[#ede5da] hover:border-[#C9B19460] hover:shadow-[0_8px_30px_#C9B19420] hover:-translate-y-1 transition-all duration-300 cursor-pointer min-w-60">
       {/* ── Image ── */}
       <div className="relative overflow-hidden bg-[#fdf5ec] h-48 sm:h-52">
         <img
@@ -39,13 +90,13 @@ export default function ProductCard({ item }) {
             e.stopPropagation();
             toggleWishlist(item);
           }}
-          className="absolute top-2.5 right-2.5 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-all duration-200 hover:scale-110"
+          className="absolute top-2.5 right-2.5 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center cursor-pointer justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-all duration-200 hover:scale-110"
         >
           <svg
             width="14"
             height="14"
             viewBox="0 0 24 24"
-            fill={wishlisted ? "#C9B194" : "none"}
+            fill={wishlisted ? "#C9B194" : "#f1f1f1"}
             stroke="#C9B194"
             strokeWidth="2"
           >
@@ -99,19 +150,19 @@ export default function ProductCard({ item }) {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1.5">
             <span className="text-[15px] font-bold text-gray-900">
-              ₹{item.price.toLocaleString()}
+              ₹{item.price}
             </span>
             {item.original && (
               <span className="text-[11px] text-gray-400 line-through">
-                ₹{item.original.toLocaleString()}
+                ₹{item.original}
               </span>
             )}
           </div>
-          {discount && (
+          {/* {discount && (
             <span className="text-[10px] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-md">
               {discount}% off
             </span>
-          )}
+          )} */}
         </div>
       </div>
     </div>

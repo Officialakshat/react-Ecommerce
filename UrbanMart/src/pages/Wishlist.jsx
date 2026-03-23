@@ -1,5 +1,5 @@
 import WishlistCard from "../components/WishlistCards";
-import { useWishlist } from "../hooks/useWishlist";
+import useWishlist from "../hooks/useWishlist";
 
 export default function Wishlist() {
   const { wishlist, removeFromWishlist } = useWishlist();
