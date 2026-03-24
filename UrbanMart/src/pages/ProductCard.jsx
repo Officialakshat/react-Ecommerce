@@ -161,25 +161,11 @@ export default function ProductCard({ item }) {
               </span>
             )}
           </div>
-          {/* {discount && (
-            <span className="text-[10px] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-md">
-              {discount}% off
-            </span>
-          )} */}
+
+          <button className="text-[10px] cursor-pointer font-semibold  bg-[#C9B194] text-white py-1 px-2 rounded-md">
+            Add
+          </button>
         </div>
-      </div>
-
-      <div className="border p-4">
-        <img src={item.image} className="w-40" />
-        <h2>{item.name}</h2>
-        <p>₹{item.price}</p>
-
-        <button
-          onClick={() => addToCart(item)}
-          className="bg-blue-500 text-white px-3 py-1 mt-2"
-        >
-          Add to Cart
-        </button>
       </div>
     </div>
   );
