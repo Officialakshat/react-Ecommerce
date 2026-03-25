@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Cart from "./pages/AddToCart";
 import Checkout from "./pages/Checkout";
 import Layout from "./layout/layout";
 import Contact from "./pages/Contact";
@@ -9,13 +8,13 @@ import NewArrivals from "./pages/NewArrivals";
 import BestDeals from "./pages/BestDeals";
 import Brands from "./pages/Brands";
 import LoginPage from "./pages/Login";
-import AddToCart from "./pages/AddToCart";
 import Signup from "./pages/Signup";
 import Wishlist from "./pages/Wishlist";
 import Products from "./pages/ProductCard";
 import ProductCard from "./pages/ProductCard";
 import Categories from "./pages/Category";
 import FeaturedProducts from "./pages/FeaturedProducts";
+import CartDrawer from "./pages/cartDrawer";
 
 function App() {
   return (
@@ -26,10 +25,9 @@ function App() {
           <Route path="category" element={<Categories />} />
           <Route path="newArrivals" element={<NewArrivals />} />
           <Route path="bestDeals" element={<BestDeals />} />
-          <Route path="cart" element={<Cart />} />
           <Route path="brands" element={<Brands />} />
           <Route path="login" element={<LoginPage />} />
-          <Route path="Cart" element={<AddToCart />} />
+          <Route path="Cart" element={<CartDrawer />} />
           <Route path="products" element={<FeaturedProducts />} />
           <Route path="wishlist" element={<Wishlist />} />
           <Route path="signup" element={<Signup />} />
