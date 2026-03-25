@@ -1,61 +1,9 @@
-import { useContext } from "react";
 import useWishlist from "../hooks/useWishlist";
-import { CartContext } from "../context/CartContext";
-
-// const Products = [
-//   {
-//     id: 1,
-//     name: "Ceramic Table Lamp",
-//     category: "Lighting",
-//     price: 1299,
-//     original: 1899,
-//     tag: "Best Seller",
-//     tagColor: "bg-[#C9B194] text-white",
-//     rating: 4.5,
-//     reviews: 128,
-//     img: "https://www.ikea.com/in/en/images/products/blidvaeder-table-lamp-off-white-ceramic-beige__1059594_pe849715_s5.jpg?f=xl",
-//   },
-//   {
-//     id: 2,
-//     name: "Sony WH-1000XM5",
-//     category: "Electronics",
-//     price: 24990,
-//     original: 29990,
-//     tag: "30% OFF",
-//     tagColor: "bg-red-100 text-red-600",
-//     rating: 5,
-//     reviews: 340,
-//     img: "https://luxebook.in/wp-content/uploads/2022/11/MW75S2_Hero_800x800_61a84578-4026-4bc0-8724-c48ab6b36229_800x800.png",
-//   },
-//   {
-//     id: 3,
-//     name: "Linen Tote Bag",
-//     category: "Fashion",
-//     price: 599,
-//     original: 999,
-//     tag: "New",
-//     tagColor: "bg-green-100 text-green-700",
-//     rating: 4,
-//     reviews: 56,
-//     img: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&q=80",
-//   },
-//   {
-//     id: 4,
-//     name: "Minimal Wall Clock",
-//     category: "Decor",
-//     price: 1499,
-//     original: 1999,
-//     tag: "Trending",
-//     tagColor: "bg-blue-100 text-blue-600",
-//     rating: 4,
-//     reviews: 89,
-//     img: "https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=400&q=80",
-//   },
-// ];
+// import { CartContext } from "../context/CartContext";
 
 export default function ProductCard({ item }) {
   const { toggleWishlist, isWishlisted } = useWishlist();
-  const { addToCart } = useContext(CartContext);
+
   const wishlisted = isWishlisted(item.id);
   const discount = item
     ? Math.round(((item - item.price) / item.original) * 100)
