@@ -1,7 +1,4 @@
-// components/ProductCard.jsx
 import { useState } from "react";
-// import { useCartContext } from "../context/CartContext";
-// import { useWishlist } from "../hooks/useWishlist";
 import useWishlist from "../hooks/useWishlist";
 import { useCartContext } from "../context/CartContext";
 

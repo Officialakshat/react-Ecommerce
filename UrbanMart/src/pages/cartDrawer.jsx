@@ -1,6 +1,5 @@
 // components/CartDrawer.jsx
 
-import useCart from "../Hooks/useCart";
 import { useCartContext } from "../context/CartContext";
 
 export default function CartDrawer({ open, onClose }) {

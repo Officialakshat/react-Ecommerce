@@ -51,96 +51,108 @@ const Products = [
     reviews: 89,
     img: "https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=400&q=80",
   },
+  {
+    id: 12,
+    name: "Matte Black Kettle",
+    category: "Kitchen",
+    price: 2199,
+    original: 2999,
+    tag: "New",
+    tagColor: "bg-green-100 text-green-700",
+    rating: 4.5,
+    reviews: 67,
+    description:
+      "Gooseneck electric kettle with temperature control and 1L capacity. Matte black finish.",
+    img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&q=80",
+  },
+  {
+    id: 13,
+    name: "Leather Passport Wallet",
+    category: "Fashion",
+    price: 899,
+    original: 1499,
+    tag: "40% OFF",
+    tagColor: "bg-red-100 text-red-600",
+    rating: 4.5,
+    reviews: 241,
+    description:
+      "Full-grain leather passport holder with RFID blocking, 4 card slots, and a slim travel profile.",
+    img: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500&q=80",
+  },
+  {
+    id: 14,
+    name: "Monstera Deliciosa",
+    category: "Plants",
+    price: 699,
+    original: 999,
+    tag: "New",
+    tagColor: "bg-green-100 text-green-700",
+    rating: 5,
+    reviews: 78,
+    description:
+      "Live Monstera plant in a 6-inch nursery pot. Air-purifying, low-maintenance, and iconic in any space.",
+    img: "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=500&q=80",
+  },
+  {
+    id: 15,
+    name: "Wooden Floating Shelf",
+    category: "Furniture",
+    price: 999,
+    original: 1499,
+    tag: "Best Seller",
+    tagColor: "bg-[#C9B194] text-white",
+    rating: 4,
+    reviews: 302,
+    description:
+      "Solid pine wood floating shelf with invisible wall brackets. 60cm wide, holds up to 15kg.",
+    img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&q=80",
+  },
+  {
+    id: 16,
+    name: "Portable Bluetooth Speaker",
+    category: "Electronics",
+    price: 3499,
+    original: 4999,
+    tag: "New",
+    tagColor: "bg-green-100 text-green-700",
+    rating: 4,
+    reviews: 156,
+    description:
+      "360° rich sound with 12-hour battery and IPX7 waterproof rating. Compact enough for any adventure.",
+    img: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500&q=80",
+  },
+  {
+    id: 17,
+    name: "Linen Duvet Cover",
+    category: "Bedroom",
+    price: 3299,
+    original: 4999,
+    tag: "34% OFF",
+    tagColor: "bg-red-100 text-red-600",
+    rating: 4.5,
+    reviews: 183,
+    description:
+      "100% stonewashed linen duvet cover in warm oat. Breathable, pre-washed soft, and gets better with every wash.",
+    img: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=500&q=80",
+  },
+  {
+    id: 18,
+    name: "Marble Cheese Board",
+    category: "Kitchen",
+    price: 1799,
+    original: 2499,
+    tag: "Trending",
+    tagColor: "bg-blue-100 text-blue-600",
+    rating: 4.5,
+    reviews: 95,
+    description:
+      "Natural white marble serving board with a handled wooden edge. Keeps food cool and looks stunning.",
+    img: "https://images.unsplash.com/photo-1555243896-c709bfa0b564?w=500&q=80",
+  },
 ];
 
 export default function FeaturedProducts() {
   return (
-    // <section className="bg-[#fdf9f5] py-12 px-5 sm:px-8 lg:px-12">
-    //   {/* Heading */}
-    //   <div className="flex items-end justify-between mb-8 max-w-6xl mx-auto">
-    //     <div>
-    //       <p className="text-xs font-medium tracking-widest text-[#C9B194] uppercase mb-1">
-    //         Hand Picked
-    //       </p>
-    //       <h2
-    //         className="text-2xl sm:text-3xl font-bold text-gray-900"
-    //         style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-    //       >
-    //         Featured Products
-    //       </h2>
-    //     </div>
-    //     <a
-    //       href="#"
-    //       className="text-sm text-[#C9B194] hover:text-[#9a7f5e] font-medium transition-colors hidden sm:block"
-    //     >
-    //       View all →
-    //     </a>
-    //   </div>
-
-    //   {/* Product Grid */}
-    //   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
-    //     {Products.map((p) => (
-    //       <div
-    //         key={p.id}
-    //         className="group bg-white rounded-2xl overflow-hidden border border-[#ede5da] hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-    //       >
-    //         {/* Image */}
-    //         <div className="relative overflow-hidden bg-[#fdf0e2] h-44 sm:h-52">
-    //           <img
-    //             src={p.img}
-    //             alt={p.name}
-    //             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-    //           />
-    //           {/* Tag */}
-    //           <span
-    //             className={`absolute top-2 left-2 text-[10px] font-semibold px-2 py-0.5 rounded-full ${p.tagColor}`}
-    //           >
-    //             {p.tag}
-    //           </span>
-    //           {/* Wishlist */}
-    //           <button className="absolute top-2 right-2 w-7 h-7 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-    //             <svg
-    //               width="13"
-    //               height="13"
-    //               viewBox="0 0 24 24"
-    //               fill="none"
-    //               stroke="#C9B194"
-    //               strokeWidth="2"
-    //             >
-    //               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-    //             </svg>
-    //           </button>
-    //         </div>
-
-    //         {/* Info */}
-    //         <div className="p-3">
-    //           <p className="text-[13px] font-medium text-gray-800 truncate mb-1">
-    //             {p.name}
-    //           </p>
-    //           <div className="flex items-center gap-1.5">
-    //             <span className="text-[14px] font-bold text-gray-900">
-    //               ₹{p.price.toLocaleString()}
-    //             </span>
-    //             <span className="text-[11px] text-gray-400 line-through">
-    //               ₹{p.original.toLocaleString()}
-    //             </span>
-    //           </div>
-    //           <button className="mt-2.5 w-full bg-[#1a1a1a] hover:bg-[#C9B194] text-white text-[12px] font-medium py-2 rounded-xl transition-colors duration-200">
-    //             Add to Cart
-    //           </button>
-    //         </div>
-    //       </div>
-    //     ))}
-    //   </div>
-
-    //   {/* Mobile: View all */}
-    //   <div className="text-center mt-6 sm:hidden">
-    //     <a href="#" className="text-sm text-[#C9B194] font-medium">
-    //       View all products →
-    //     </a>
-    //   </div>
-    // </section>
-
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-6 gap-6 p max-w-6xl mx-auto">
       {Products.map((card) => (
         <ProductCard item={card} />

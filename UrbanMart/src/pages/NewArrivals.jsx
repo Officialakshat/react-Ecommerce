@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { useCartContext } from "../context/CartContext";
 import useWishlist from "../hooks/useWishlist";
 
 const newArrivals = [
@@ -6,6 +8,11 @@ const newArrivals = [
     name: "Rattan Accent Chair",
     category: "Furniture",
     price: 8499,
+    original: 1899,
+    tag: "Best Seller",
+    tagColor: "bg-[#C9B194] text-white",
+    rating: 4.5,
+    reviews: 128,
     img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=80",
     isNew: true,
   },
@@ -59,9 +66,19 @@ const newArrivals = [
   },
 ];
 
-export default function NewArrivals() {
+export default function NewArrivals({ item }) {
   const { toggleWishlist, isWishlisted } = useWishlist();
+  const { addToCart, isInCart } = useCartContext();
+  const [added, setAdded] = useState(false);
 
+  const inCart = isInCart(item);
+
+  const handleAddToCart = (e) => {
+    e.stopPropagation();
+    addToCart(item);
+    setAdded(true);
+    setTimeout(() => setAdded(false), 1800);
+  };
   return (
     <section className="bg-white py-12 px-5 sm:px-8 lg:px-12">
       {/* Header */}
@@ -132,7 +149,10 @@ export default function NewArrivals() {
                   <span className="text-[14px] font-bold text-gray-900">
                     ₹{item.price.toLocaleString()}
                   </span>
-                  <button className="text-[10px] bg-[#C9B194] hover:bg-[#b89e7e] text-white px-2.5 py-1 rounded-lg font-medium transition-colors">
+                  <button
+                    onClick={handleAddToCart}
+                    className="text-[10px] bg-[#C9B194] hover:bg-[#b89e7e] text-white px-2.5 py-1 rounded-lg font-medium transition-colors"
+                  >
                     Add
                   </button>
                 </div>
