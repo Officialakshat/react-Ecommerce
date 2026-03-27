@@ -1,70 +1,7 @@
 import { useState } from "react";
 import { useCartContext } from "../context/CartContext";
 import useWishlist from "../hooks/useWishlist";
-
-const newArrivals = [
-  {
-    id: 1,
-    name: "Rattan Accent Chair",
-    category: "Furniture",
-    price: 8499,
-    original: 1899,
-    tag: "Best Seller",
-    tagColor: "bg-[#C9B194] text-white",
-    rating: 4.5,
-    reviews: 128,
-    img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=80",
-    isNew: true,
-  },
-  {
-    id: 2,
-    name: "Jade Succulent Pot",
-    category: "Plants",
-    price: 349,
-    img: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=400&q=80",
-    isNew: true,
-  },
-  {
-    id: 3,
-    name: "Matte Black Kettle",
-    category: "Kitchen",
-    price: 2199,
-    img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80",
-    isNew: true,
-  },
-  {
-    id: 4,
-    name: "Linen Throw Pillow",
-    category: "Decor",
-    price: 699,
-    img: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=80",
-    isNew: true,
-  },
-  {
-    id: 5,
-    name: "Wooden Desk Organiser",
-    category: "Office",
-    price: 1299,
-    img: "https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=400&q=80",
-    isNew: false,
-  },
-  {
-    id: 6,
-    name: "Phone Stand",
-    category: "Mobile accessories",
-    price: 349,
-    img: "https://m.media-amazon.com/images/I/51Gh0Nla3RL._AC_.jpg",
-    isNew: true,
-  },
-  {
-    id: 7,
-    name: "Candle Set",
-    category: "Decor",
-    price: 349,
-    img: "https://houseofaroma.in/wp-content/uploads/2023/10/simple-Pleasures-gift-sets-1.webp",
-    isNew: true,
-  },
-];
+import Products from "../data/products";
 
 export default function NewArrivals({ item }) {
   const { toggleWishlist, isWishlisted } = useWishlist();
@@ -105,7 +42,7 @@ export default function NewArrivals({ item }) {
       {/* Horizontal scroll on mobile, grid on md+ */}
       <div className="max-w-6xl mx-auto">
         <div className="flex gap-4 overflow-x-auto pb-3 md:grid md:grid-cols-5 md:overflow-visible scrollbar-hide">
-          {newArrivals.map((item) => (
+          {Products.map((item) => (
             <div
               key={item.id}
               className="group shrink-0 w-44 md:w-auto bg-[#fdf9f5] rounded-2xl overflow-hidden border border-[#ede5da] hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer"
