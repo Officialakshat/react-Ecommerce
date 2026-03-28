@@ -26,8 +26,11 @@ export default function Navbar() {
 
   // Close mobile menu on route change
   useEffect(() => {
-    setMenuOpen(false);
-    setSearchOpen(false);
+    const timer = setTimeout(() => {
+      setMenuOpen(false);
+      setSearchOpen(false);
+    }, 0);
+    return () => clearTimeout(timer);
   }, [pathname]);
 
   // Shrink nav on scroll
