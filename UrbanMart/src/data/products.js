@@ -35,6 +35,7 @@ const Products = [
     rating: 4,
     reviews: 56,
     img: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&q=80",
+    tagName: "newArrival",
   },
   {
     id: 4,
@@ -47,6 +48,7 @@ const Products = [
     rating: 4,
     reviews: 89,
     img: "https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=400&q=80",
+    tagName: "newArrival",
   },
   {
     id: 5,
@@ -75,6 +77,7 @@ const Products = [
     description:
       "Full-grain leather passport holder with RFID blocking, 4 card slots, and a slim travel profile.",
     img: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500&q=80",
+    tagName: "newArrival",
   },
   {
     id: 7,
@@ -103,6 +106,7 @@ const Products = [
     description:
       "Solid pine wood floating shelf with invisible wall brackets. 60cm wide, holds up to 15kg.",
     img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&q=80",
+    tagName: "newArrival",
   },
   {
     id: 9,

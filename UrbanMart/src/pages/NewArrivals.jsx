@@ -1,110 +1,12 @@
-import { useState } from "react";
-import { useCartContext } from "../context/CartContext";
-import useWishlist from "../hooks/useWishlist";
 import Products from "../data/products";
+import ProductCard from "./ProductCard.jsx";
 
-export default function NewArrivals({ item }) {
-  const { toggleWishlist, isWishlisted } = useWishlist();
-  const { addToCart, isInCart } = useCartContext();
-  const [added, setAdded] = useState(false);
-
-  const inCart = isInCart(item);
-
-  const handleAddToCart = (e) => {
-    e.stopPropagation();
-    addToCart(item);
-    setAdded(true);
-    setTimeout(() => setAdded(false), 1800);
-  };
+export default function NewArrivals() {
   return (
-    <section className="bg-white py-12 px-5 sm:px-8 lg:px-12">
-      {/* Header */}
-      <div className="flex items-end justify-between mb-8 max-w-6xl mx-auto">
-        <div>
-          <p className="text-xs font-medium tracking-widest text-[#C9B194] uppercase mb-1">
-            Just In
-          </p>
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-gray-900"
-            style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-          >
-            New Arrivals
-          </h2>
-        </div>
-        <a
-          href="#"
-          className="hidden sm:block text-sm text-[#C9B194] hover:text-[#9a7f5e] font-medium transition-colors"
-        >
-          View all →
-        </a>
-      </div>
-
-      {/* Horizontal scroll on mobile, grid on md+ */}
-      <div className="max-w-6xl mx-auto">
-        <div className="flex gap-4 overflow-x-auto pb-3 md:grid md:grid-cols-5 md:overflow-visible scrollbar-hide">
-          {Products.map((item) => (
-            <div
-              key={item.id}
-              className="group shrink-0 w-44 md:w-auto bg-[#fdf9f5] rounded-2xl overflow-hidden border border-[#ede5da] hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-            >
-              {/* Image */}
-              <div className="relative h-44 overflow-hidden bg-[#f5ede0]">
-                <img
-                  src={item.img}
-                  alt={item.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <span className="absolute top-2 left-2 bg-[#1a1a1a] text-white text-[9px] font-semibold px-2 py-0.5 rounded-full tracking-wide">
-                  New
-                </span>
-                <button
-                  onClick={() => toggleWishlist(item)}
-                  className="absolute top-2 right-2 w-7 h-7 bg-white/80 hover:bg-white cursor-pointer rounded-full flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-opacity"
-                >
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill={isWishlisted(item.id) ? "#C9B194" : "none"}
-                    stroke="#C9B194"
-                    strokeWidth="2"
-                  >
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                  </svg>
-                </button>
-              </div>
-
-              {/* Info */}
-              <div className="p-3">
-                <p className="text-[10px] text-[#C9B194] font-medium uppercase tracking-wider mb-0.5">
-                  {item.category}
-                </p>
-                <p className="text-[13px] font-medium text-gray-800 truncate mb-1">
-                  {item.name}
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-[14px] font-bold text-gray-900">
-                    ₹{item.price.toLocaleString()}
-                  </span>
-                  <button
-                    onClick={handleAddToCart}
-                    className="text-[10px] bg-[#C9B194] hover:bg-[#b89e7e] text-white px-2.5 py-1 rounded-lg font-medium transition-colors"
-                  >
-                    Add
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Mobile view all */}
-      <div className="text-center mt-5 sm:hidden">
-        <a href="#" className="text-sm text-[#C9B194] font-medium">
-          View all new arrivals →
-        </a>
-      </div>
-    </section>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-6 gap-6 max-w-6xl mx-auto">
+      {Products.filter((card) => card.tagName === "newArrival").map((card) => (
+        <ProductCard key={card.id} item={card} />
+      ))}
+    </div>
   );
 }
